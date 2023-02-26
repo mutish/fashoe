@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS stocks;
+
+CREATE TABLE stocks(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    price TEXT NOT NULL,
+);
+

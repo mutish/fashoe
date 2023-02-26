@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{% block title %} stocks {% endblock %}</h1>
+
+    {% for x in stocks %}
+        <div class="post">
+            <p>{{ x['title'] }}</p>
+            <p>{{ x['price'] }}</p>
+
+            <a href="{{ url_for('edit' , id=x['id'])}}">Edit </a>
+            <a href="{{ url_for('delete' , id=x['id'])}}">Delete </a>
+
+        </div>
+ {% endfor %}
+
+{% endblock %}

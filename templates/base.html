@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{#      {% block  %}  -> placeholder / replaceable   #}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        .stock {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3;
+        }
+        nav a {
+            color: red;
+            font-size: 1em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Fashoe</a>
+        <a href="#">About Page</a>
+        <a href="{{ url_for('add') }}">Add</a>
+    </nav>
+
+    <div class="content">
+
+        {% for message in get_flashed_messages() %}
+              <div class="alert">{{ message }}</div>
+        {% endfor %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>
